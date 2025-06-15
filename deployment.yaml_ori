@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: node-app
-        image: erisjat/nodeapp:latest
+        image: iquantc/iquant-app:latest
         ports:
         - containerPort: 3000
       imagePullSecrets:
