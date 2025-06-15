@@ -46,6 +46,7 @@ pipeline {
 						sh 'kubectl scale deployment node-app-deployment --replicas=0'
                                                 sh 'kubectl apply -f deployment.yaml'
                                                 sh 'kubectl scale deployment node-app-deployment --replicas=3'
+                                                sh 'kubectl apply -f service.yaml'
                                         }
                                 }
                         }
