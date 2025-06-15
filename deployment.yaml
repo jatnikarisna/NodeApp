@@ -6,7 +6,8 @@ spec:
   replicas: 2
   strategy:
     type: RollingUpdate
-    rollingUp      maxSurge: 50%
+    rollingUpdate:
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: node-app
