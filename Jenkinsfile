@@ -47,7 +47,7 @@ pipeline {
                     sh '''
                         if kubectl get deployments | grep node-app-deployment
                         then
-                            kubectl set image deployment/node-app-deployment node-app-deployment=erisjat/nodeapp:latest
+                            kubectl set image deployment/node-app-deployment node-app=erisjat/nodeapp:latest
                             kubectl rollout restart deployment node-app-deployment 
                         else
                             kubectl apply -f deployment.yaml -n default
