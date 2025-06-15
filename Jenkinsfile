@@ -5,12 +5,12 @@ pipeline {
 	}
 	environment {
 		DOCKER_HUB_CREDENTIALS_ID = 'jen-dockerhub'
-		DOCKER_HUB_REPO = 'iquantc/iquant-app'
+		DOCKER_HUB_REPO = 'erisjat/nodeapp'
 	}
 	stages {
 		stage('Checkout Github'){
 			steps {
-				git branch: 'main', credentialsId: 'jen-doc-git', url: 'https://github.com/iQuantC/NodeApp.git'
+				git branch: 'main', credentialsId: 'jenkins-doc-git', url: 'https://github.com/jatnikarisna/NodeApp.git'
 			}
 		}		
 		stage('Install node dependencies'){
