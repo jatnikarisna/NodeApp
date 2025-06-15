@@ -3,12 +3,10 @@ kind: Deployment
 metadata:
   name: node-app-deployment
 spec:
-  replicas: 3
+  replicas: 2
   strategy:
     type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
+    rollingUp      maxSurge: 50%
   selector:
     matchLabels:
       app: node-app
