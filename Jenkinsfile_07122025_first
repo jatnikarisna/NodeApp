@@ -51,7 +51,6 @@ pipeline {
                             kubectl rollout restart deployment node-app-deployment 
                         else
                             kubectl apply -f deployment.yaml -n default
-                            kubectl apply -f service.yaml -n default
                         fi
                     '''	
                                         }
