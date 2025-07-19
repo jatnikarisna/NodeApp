@@ -48,15 +48,16 @@ kubeconfig(caCertificate: 'LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ
     sh '''
       if kubectl get deployments | grep node-app-deployment
        then
-          kubectl delete deployment node-app-deployment
-	  kubectl apply -f deployment.yaml 
-          kubectl apply -f service.yaml 
+          sh 'kubectl scale deployment node-app-deployment --replicas=0'
+          sh 'kubectl apply -f deployment.yaml'
+          sh 'kubectl scale deployment node-app-deployment --replicas=3'
+          sh 'kubectl apply -f service.yaml'
       else
-          kubectl apply -f deployment.yaml
-          kubectl apply -f service.yaml
+          sh 'kubectl apply -f deployment.yaml'
+          sh 'kubectl scale deployment node-app-deployment --replicas=3'
+          sh 'kubectl apply -f service.yaml'
           fi
        '''
-
 
                                         }
                                 }
