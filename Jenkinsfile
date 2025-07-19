@@ -42,18 +42,13 @@ pipeline {
                 stage('Deploy to Kubernetes'){
                         steps {
                                 script {
-					kubeconfig(caCertificate: 'LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURLVENDQWhHZ0F3SUJBZ0lJVjJ2VjdlWjdlc2N3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TlRBM01USXhNREk0TXpCYUZ3MHlOakEzTVRJeE1ETXpNekJhTUR3eApIekFkQmdOVkJBb1RGbXQxWW1WaFpHMDZZMngxYzNSbGNpMWhaRzFwYm5NeEdUQVhCZ05WQkFNVEVHdDFZbVZ5CmJtVjBaWE10WVdSdGFXNHdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCQVFDYi8vQk8KbWs5RjYzdXhzQks2eUpHOVczdCtXNHFjcndBT1VDL3RpQnpFNUIyaGZCZ25Rd1FZMmNIdCttUGlHdVdHMDJLYQpKS3VkUThodnVLNXZUNzM5d2x2a2NISk5lYTRNOFczNUxSMGhSZ01nazNzYkhVV05nc1ljQzhXaDBPVWliZmFRCkNmNDRNOFBMbWswZC83cU9JOVpxdDhVdXg3UFpESWJCdTNpZ3dWOE1aQ0U0MGJGYmkzMVgrbjJ6Rjd3b2pOdUQKeW9PZUNuT2h2K3BxU2hRQ0oxakJhU2ZUOUZBSU5iZTd1TDVsTEhpVGFiY3dKTVZ5eDJHaVBrM0RhTitwNzZXWQpUWTlLMjlocnVYRERhS3ByN3dhczlwWkY3VkpTNDJxRUhDWWh4QWNldXJMRXY2dnNYb096NTdyaDFTRGJZQW9HCitxem05eFVNdUVWSnk1VUhBZ01CQUFHalZqQlVNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUsKQmdnckJnRUZCUWNEQWpBTUJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRkxrVVdKSC9FRklCa1FPdApvUHJoVEk1bElTc3NNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUURCcjYxRUZRWUx4Ymp5NldZU0pvMzg2M0ZuCnI3dnNWN1lMU1JGOXpTR0NnWnhWcVgrWHNWUCtrY3ZQQU1vZW00Y3Vlb20wQ3ZuUWJkYTdUd0dhVWZkRitpdGsKRkNuNVFmdG43WG5lRzNhODN5a2NycmNCdlNZQTgrcXNNcVlya1JyT21wck5VdG56QThLWVB6bUdUUUZhek9iUgpZWHBsVTNRWlpGTXFvYWliZTh6ZyttYzNqNDlqckl2MnQwUFE2TlhGQlRTZERpVHcrc3hrd1k4SytxTWdTMzFnCkpEZmh2TGhtVXlWbzJUQ3lQQ1YrRlV6SGdUcnZmQWhkLzFzdFl2OU1uUk8zeVZPajdza1NoRlN2ZjAzUG52NjQKWVJleDVjVldjek43T2k0NjkrcE93WktmWDlXZHVYamtzTThYMDRvZy9HTmFJbEpZc0llYnlMVm1UWFdpCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K', credentialsId: 'kubernetes', serverUrl: 'https://172.31.45.176:6443') {
-    sh 'echo "Starting ams Deployment"'
+kubeconfig(caCertificate: 'LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURLVENDQWhHZ0F3SUJBZ0lJSE1FWTEwTUQ1dUl3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TlRBM01Ua3dNakkxTVRkYUZ3MHlOakEzTVRrd01qTXdNVGRhTUR3eApIekFkQmdOVkJBb1RGbXQxWW1WaFpHMDZZMngxYzNSbGNpMWhaRzFwYm5NeEdUQVhCZ05WQkFNVEVHdDFZbVZ5CmJtVjBaWE10WVdSdGFXNHdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCQVFEUDBVTHEKOStVSENiQ2UxZ1c2OUJqbE1zR0g1V2NEeDRMN1VxVk83Z2xLeStzT0k1UDlOMjJEMFZUbE1QRDVxdEMzZDJCQgpmY2tiVm1Fb25RelVRMjhVbHladk96M0hhUXoyKy9tQXhLZExoSXNuRTl5RE1VYUhXeDZkbDZsSVVadkF5OVk0CmE4V0VCZmRqWnEvck1kd3VGVDEzV01KL0h2VlhJTk1IS3ZzT3k2UGFNM2tsV3g2WTdGdlJmSEtiOHJKdGpKcnYKUG96NWRWNDNyYzYyZG8wbkdMOGN5TGdqVEpaVjJXanB1YW1NWFNTdE92b3hjbEJPYnh4b1NyQ2tJRTg5WXFZNApNeTlvMm5VKy95ZlZRV2Z2RDU2bjI1Y3JnL0oweEdSd1N4R0pOM2d4b3ZmTUVQRzhPTEZCZVpIcVV0bDIzVkFBCmFVNEtTTkZPcGJRY3ZFZ2hBZ01CQUFHalZqQlVNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUsKQmdnckJnRUZCUWNEQWpBTUJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRlAyMlQzSHNrN2F0Skc1NwpnREdTZTNVOVUxRytNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUF5czJZMUZyWEVCc0w3Wmt4MzljV2MwaTVjCk41QitxTTFiby9DNnU1cWo4endLbFI0dnhOS0tYRmtLQ2t3THgvQVJERk9lbUVPTnNMck1BNnFDakRJL2lPRnMKeUVUdGREZlFFMExDVTd3NXpRMzZOSlZDeHlDRW82Z0VZUkRmVENBNXZ5Z3RnRnNJei9Vcit1RGxBOE1mMWRlRgo3WXZGZnB0aXM4OTIzZndkZ0J4TzNmVnFRaEhVT0FqM2V1UUJTM1hEZkJyZEZoY01kNER4dlNLWTZJU2Z3SnpqCnIrM2x5V25SekQ0NzFYRjY1cVEyYkFvdmRlS0ZYeC9TZmtBN092MHU2bEVTR0htbm96eVYvQ0daVVQ3eXBSUXMKc2RCUExTTjB1MlRwdEczRWxpYmZrUGVaM3NNNEcweXBQQ1lQaVhDaHYxajlRekdKQzB0aTRhSVlvdnFXCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K', credentialsId: 'kubernetes', serverUrl: 'https://172.31.138.173:6443') {
+        sh 'echo "Starting K8s Deployment"'
                     sh '''
-                        if kubectl get deployments | grep node-app-deployment
-                        then
-                            kubectl set image deployment/node-app-deployment node-app=erisjat/nodeapp:latest
-                            kubectl rollout restart deployment node-app-deployment 
-                        else
-                            kubectl apply -f deployment.yaml -n default
-                            kubectl apply -f service.yaml -n default
-                        fi
-                    '''	
+                        kubectl delete deployment node-app-deployment
+                        kubectl apply -f deployment.yaml 
+                        kubectl apply -f service.yaml 
+                    '''
                                         }
                                 }
                         }
