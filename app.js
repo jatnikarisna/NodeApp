@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.get('/hello', (req, res) => {
-  res.send('Hello, World! Welcome Team to MOAI OSS BIG Family 2025. Let learn & share with scale deployment 07192025...spirit#3\n');
+  res.send('Hello, World! Welcome Team to MOAI OSS BIG Family 2025. Let learn & share with rolling update 07192025...spirit#4\n');
 });
 
 app.listen(port, () => {
