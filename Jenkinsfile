@@ -42,14 +42,11 @@ sh 'echo "Starting ams Deployment"'
     sh '''
       if kubectl get deployments | grep node-app-deployment
        then
-          kubectl scale deployment node-app-deployment --replicas=0
-          kubectl apply -f deployment.yaml
-          kubectl scale deployment node-app-deployment --replicas=3
+          kubectl set image deployment/node-app-deployment node-app=erisjat/nodeapp:latest
+          kubectl rollout restart deployment node-app-deployment
           kubectl apply -f service.yaml
       else
-          kubectl apply -f deployment.yaml
-          kubectl scale deployment node-app-deployment --replicas=3
-          kubectl apply -f service.yaml
+          kubectl apply -f deployment.yaml -n default
           fi
        '''
  
